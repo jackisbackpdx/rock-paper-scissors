@@ -1,0 +1,31 @@
+img {
+    height: 300px;
+    width: 300px;
+}
+input {
+    display: none;
+}
+
+.radio-image {
+    border: 5px solid transparent;
+}
+input:checked + .radio-image {
+    border: 2px solid blueviolet;
+}
+h2 {
+    width: 500px;
+    text-align: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+html {
+    height: 100%;
+}
+#paper {
+    border-radius: 5%;
+}
