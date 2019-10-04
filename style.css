@@ -1,37 +1,40 @@
 img {
-    width: 90%;
+    width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 header {
-    height: 1000px;
+    height: 400px;
     background-color: orange;
-    width: 90%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 figure {
-    height: 800px;
+    height: 500px;
     display: flex;
     align-items: center;
     background: lightgreen;
-    width: 90%;
+    width: 50%;
 }
 #outcome {
-    width: 90%;
+    width: 50%;
     background-color: lightskyblue;
-    height: 800px;
+    height: 400px;
     display: flex;
     flex-direction: column; 
     justify-content: center;
     text-align: center;
 }
+button:hover {
+    background-color: red;
+    animation-delay: 500ms;
+}
 button {
-    width: 100px;
-    display: inline;
     margin: 0 auto;
+    height: 50px;
 }
 #outcome + div {
     width: 33%;
@@ -40,6 +43,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     height: 80%;
 }
 input {
@@ -52,9 +56,13 @@ input {
 input:checked + .radio-image {
     border: 5px solid blueviolet;
 }
+h1 {
+    font-family: 2rem;
+}
 h2 {
-    width: 500px;
+    max-width: 50%;
     text-align: center;
+    font-size: 1rem;
 }
 body {
     display: flex;
@@ -62,13 +70,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: chocolate;
+    background-image: url('./images/circle-blues.png');
+    font-family: 'notable', sans-serif;
 }
-html {
-    height: 100%;
-}
+
 label {
     display: flex;
     justify-content: center;
+    height: 50%;
+    width: 33%;
 }
 

@@ -40,11 +40,8 @@ const updateResults = (makeGuess) => {
 button.addEventListener('click', function() {
     const selected = document.querySelector('input:checked');
     const userChoice = selected.value;
-    console.log(userChoice);
     const generateRandomNumber = Math.floor(Math.random() * 3);
     const computerChoiceString = getComputerChoice(generateRandomNumber);
-    console.log(computerChoiceString);
     const gameOutcome = makeGuess(userChoice, computerChoiceString);
     updateResults(gameOutcome);
-    console.log(makeGuess(userChoice, computerChoiceString));
 });
