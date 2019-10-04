@@ -1,16 +1,22 @@
 img {
-    height: 300px;
-    width: 300px;
+    width: 90%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#img-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 33%;
 }
 input {
     display: none;
 }
-
 .radio-image {
     border: 5px solid transparent;
 }
 input:checked + .radio-image {
-    border: 2px solid blueviolet;
+    border: 5px solid blueviolet;
 }
 h2 {
     width: 500px;
@@ -20,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
 }
 html {
@@ -28,4 +34,8 @@ html {
 }
 #paper {
     border-radius: 5%;
+}
+label {
+    display: flex;
+    justify-content: center;
 }

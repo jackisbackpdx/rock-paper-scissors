@@ -1,17 +1,17 @@
 const makeGuess = (userChoice, computerChoice) => {
     if (userChoice === computerChoice) {
         return 'tie';
-    } else if (userChoice === 'rock' && computerChoice === 'paper') {
+    } if (userChoice === 'rock' && computerChoice === 'paper') {
         return 'lost';
-    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+    } if (userChoice === 'paper' && computerChoice === 'scissors') {
         return 'lost';
-    } else if (userChoice === 'scissors' && computerChoice === 'rock') {
+    } if (userChoice === 'scissors' && computerChoice === 'rock') {
         return 'lost';
-    } else if (userChoice === 'rock' && computerChoice === 'scissor') {
+    } if (userChoice === 'rock' && computerChoice === 'scissors') {
         return 'won';
-    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+    } if (userChoice === 'scissors' && computerChoice === 'paper') {
         return 'won';
-    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+    } if (userChoice === 'paper' && computerChoice === 'rock') {
         return 'won';
     }
 };

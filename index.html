@@ -14,27 +14,26 @@
 
     <h2>Choose either rock, paper, or 
         scissors and click the button to see if you won</h2>
-<div>
+<div id='img-div'>
     <label>
+        <input type='radio' name='rps' value='paper'/>
         <img id='paper' class='radio-image' src='./images/paper.jpg'>
-        <input type='radio' name='rps' value='paper' checked/>
     </label>
     <label>
-        <img id='rock' class='radio-image' src='./images/rock.jpg'>
         <input type='radio' name='rps' value='rock'/>
+        <img id='rock' class='radio-image' src='./images/rock.jpg'>
     </label>
     <label>
-        <img id='rock' class='radio-image' src='./images/scissors.jpg'>
         <input type='radio' name='rps' value='scissors'/>
+        <img id='rock' class='radio-image' src='./images/scissors.jpg'>
     </label>
 </div>
 <button id='game-button'>Play Game</button>
-Computer choice:
-<img id='computer-choice'/>
+<div>Game Outcome: <span id='computer-choice'></span></div>
 <div>Wins:<span id='win-span'></span></div>
 <div>Losses:<span id='loss-span'></span></div>
 <div>Ties:<span id='tie-span'></span></div>
-    <script src="app.js"></script>
+    <script src='app.js' type='module'></script>
 </body>
 
 </html>
