@@ -29,7 +29,6 @@ figure {
     text-align: center;
 }
 button {
-    width: 100px;
     display: inline;
     margin: 0 auto;
 }
@@ -71,4 +70,3 @@ label {
     display: flex;
     justify-content: center;
 }
-
