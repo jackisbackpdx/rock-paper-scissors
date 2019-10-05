@@ -9,6 +9,7 @@ input {
 .radio-image {
     border: 5px solid transparent;
 }
+
 input:checked + .radio-image {
     border: 2px solid blueviolet;
 }

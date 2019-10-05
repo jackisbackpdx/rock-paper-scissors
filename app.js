@@ -1,80 +1,54 @@
+import makeGuess from './rps-check.js';
+
 const button = document.getElementById('game-button');
-let wins = 0;
-let losses = 0;
-let ties = 0;
 let winSpan = document.getElementById('win-span');
 let lossSpan = document.getElementById('loss-span');
 let tieSpan = document.getElementById('tie-span');
+const computerDisplay = document.getElementById('computer-choice');
 
-const generateRandomNumber = () => {
-    return Math.floor(Math.random() * 3);
-};
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
-let getComputerChoice = () => {
-    if (generateRandomNumber() === 0) {
+winSpan.textContent = wins;
+lossSpan.textContent = losses;
+tieSpan.textContent = ties;
+
+const generateRandomNumber = Math.floor(Math.random() * 3);
+
+const getComputerChoice = (num) => {
+    if (num === 0) {
         return 'rock';
-    } else if (generateRandomNumber() === 1) {
+    } else if (num === 1) {
         return 'paper';
-    } 
-    return 'scissors';
-};
-
-const selected = document.querySelector('input:checked');
-const userChoice = selected.value;
-const computerChoice = getComputerChoice();
-
-let makeGuess = (userChoice, computerChoice) => {
-
-    if (userChoice === computerChoice) {
-        return 'tie';
-    } else if (userChoice === 'rock' && computerChoice === 'paper') {
-        return 'lost';
-    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
-        return 'lost';
-    } else if (userChoice === 'scissors' && computerChoice === 'rock') {
-        return 'lost';
-    } else if (userChoice === 'rock' && computerChoice === 'scissor') {
-        return 'won';
-    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
-        return 'won';
-    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
-        return 'won';
+    } else if (num === 2){
+        return 'scissors';
     }
 };
 
 const updateResults = (makeGuess) => {
     if (makeGuess === 'lost') {
-        loss();
+        losses++;
+        lossSpan.textContent = losses;
+        computerDisplay.textContent = 'loss';
     } else if (makeGuess === 'win') {
-        win();
+        wins++;
+        winSpan.textContent = wins;
+        computerDisplay.textContent = 'win';
     } else if (makeGuess === 'tie') {
-        tie();
+        ties++;
+        tieSpan.textContent = ties;
+        computerDisplay.textContent = 'tie';
     }
 };
 
-const showResults = () => {
-    winSpan.textContent = wins;
-    lossSpan.textContent = losses;
-    tieSpan.textContent = ties;
+const playGame = () => {
+    const selected = document.querySelector('input:checked');
+    const userGuess = selected.value;
+    const computerChoice = getComputerChoice(generateRandomNumber);
+    const result = makeGuess(userGuess, computerChoice);
+    updateResults(result);
+    console.log(computerChoice);
 };
 
-button.addEventListener('click', function() {
-    makeGuess();
-    updateResults();
-    showResults();
-});
-
-const tie = () => {
-    ties++;
-    computerChoice.textContent = 'tie';
-};
-
-const win = () => {
-    wins++;
-    computerChoice.textContent = 'win';
-};
-
-const loss = () => {
-    losses++;
-    computerChoice.textContent = 'loss';
-};
+button.addEventListener('click', playGame);
