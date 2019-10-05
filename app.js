@@ -1,54 +1,47 @@
 import makeGuess from './rps-check.js';
-
 const button = document.getElementById('game-button');
-let winSpan = document.getElementById('win-span');
-let lossSpan = document.getElementById('loss-span');
-let tieSpan = document.getElementById('tie-span');
-const computerDisplay = document.getElementById('computer-choice');
-
+const computerChoiceDisplay = document.getElementById('computer-choice');
+const winSpan = document.getElementById('win-span');
+const lossSpan = document.getElementById('loss-span');
+const tieSpan = document.getElementById('tie-span');
 let wins = 0;
 let losses = 0;
 let ties = 0;
-
-winSpan.textContent = wins;
 lossSpan.textContent = losses;
+winSpan.textContent = wins;
 tieSpan.textContent = ties;
 
-const generateRandomNumber = Math.floor(Math.random() * 3);
 
-const getComputerChoice = (num) => {
-    if (num === 0) {
+const getComputerChoice = (generateRandomNumber) => {
+    if (generateRandomNumber === 0) {
         return 'rock';
-    } else if (num === 1) {
+    } else if (generateRandomNumber === 1) {
         return 'paper';
-    } else if (num === 2){
-        return 'scissors';
-    }
+    } return 'scissors';
 };
+
 
 const updateResults = (makeGuess) => {
     if (makeGuess === 'lost') {
-        losses++;
+        losses += 1;
+        computerChoiceDisplay.textContent = 'lost';
         lossSpan.textContent = losses;
-        computerDisplay.textContent = 'loss';
-    } else if (makeGuess === 'win') {
-        wins++;
+    } else if (makeGuess === 'won') {
+        wins += 1;
+        computerChoiceDisplay.textContent = 'won';
         winSpan.textContent = wins;
-        computerDisplay.textContent = 'win';
     } else if (makeGuess === 'tie') {
-        ties++;
+        ties += 1;
+        computerChoiceDisplay.textContent = 'tie';
         tieSpan.textContent = ties;
-        computerDisplay.textContent = 'tie';
     }
 };
 
-const playGame = () => {
+button.addEventListener('click', function() {
     const selected = document.querySelector('input:checked');
-    const userGuess = selected.value;
-    const computerChoice = getComputerChoice(generateRandomNumber);
-    const result = makeGuess(userGuess, computerChoice);
-    updateResults(result);
-    console.log(computerChoice);
-};
-
-button.addEventListener('click', playGame);
+    const userChoice = selected.value;
+    const generateRandomNumber = Math.floor(Math.random() * 3);
+    const computerChoiceString = getComputerChoice(generateRandomNumber);
+    const gameOutcome = makeGuess(userChoice, computerChoiceString);
+    updateResults(gameOutcome);
+});
