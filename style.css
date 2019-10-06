@@ -1,12 +1,18 @@
+* {
+    box-sizing: border-box;
+    color: linear-gradient(lightskyblue, magenta);;
+    border-radius: 3px;
+    font-family: 'notable', sans-serif;
+}
 img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     box-sizing: border-box;
 }
 header {
     height: 400px;
-    background-color: orange;
-    width: 50%;
+    background: linear-gradient(orange,lightgreen);
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,28 +22,37 @@ figure {
     height: 500px;
     display: flex;
     align-items: center;
-    background: lightgreen;
-    width: 50%;
+    background: linear-gradient(lightgreen, lightskyblue);
+    width: 70%;
+    margin: 0px;
 }
 #outcome {
-    width: 50%;
-    background-color: lightskyblue;
+    width: 70%;
+    background: linear-gradient(lightskyblue, magenta);
     height: 400px;
     display: flex;
     flex-direction: column; 
     justify-content: center;
     text-align: center;
 }
-button:hover {
-    background-color: red;
-    animation-delay: 500ms;
+#score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    width: 33%;
+    margin: 0 auto;
+    margin-top: 3%;
 }
 button {
     margin: 0 auto;
     height: 50px;
 }
-#outcome + div {
-    width: 33%;
+button:hover {
+    background-color: red;
+    animation-duration: 500ms;
+    cursor: pointer;
 }
 #img-div {
     display: flex;
@@ -52,12 +67,18 @@ input {
 .radio-image {
     border: 5px solid transparent;
     border-radius: 5%;
+    background: pink;
+}
+.radio-image:hover {
+    cursor: pointer;
 }
 input:checked + .radio-image {
-    border: 5px solid blueviolet;
+    border: 5px solid magenta;
+    box-sizing: border-box;
 }
 h1 {
     font-family: 2rem;
+    text-align: center;
 }
 h2 {
     max-width: 50%;
@@ -71,13 +92,10 @@ body {
     justify-content: center;
     height: 100%;
     background-image: url('./images/circle-blues.png');
-    font-family: 'notable', sans-serif;
 }
-
 label {
     display: flex;
     justify-content: center;
     height: 50%;
     width: 33%;
 }
-

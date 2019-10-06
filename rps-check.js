@@ -1,18 +1,21 @@
+export const WON = 'won';
+export const LOST = 'lost';
+export const TIE = 'tie';
 const makeGuess = (userChoice, computerChoice) => {
     if (userChoice === computerChoice) {
-        return 'tie';
+        return TIE;
     } if (userChoice === 'rock' && computerChoice === 'paper') {
-        return 'lost';
+        return LOST;
     } if (userChoice === 'paper' && computerChoice === 'scissors') {
-        return 'lost';
+        return LOST;
     } if (userChoice === 'scissors' && computerChoice === 'rock') {
-        return 'lost';
+        return LOST;
     } if (userChoice === 'rock' && computerChoice === 'scissors') {
-        return 'won';
+        return WON;
     } if (userChoice === 'scissors' && computerChoice === 'paper') {
-        return 'won';
+        return WON;
     } if (userChoice === 'paper' && computerChoice === 'rock') {
-        return 'won';
+        return WON;
     }
 };
 
