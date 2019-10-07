@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,12 +16,13 @@
     
         <h2>Choose either rock, paper, or 
             scissors and click the button to see if you won</h2>
+
     </header>
     <figure>
         <div id='img-div'>
             <label>
                 <input type='radio' name='rps' value='paper'/>
-                <img id='paper' class='radio-image' src='./images/paper.jpg'>
+                <img id='paper' class='radio-image' src='./images/paper.png'>
             </label>
             <label>
                 <input type='radio' name='rps' value='rock'/>
@@ -34,10 +36,12 @@
     </figure>
 <div id='outcome'>
     <button id='game-button'>Play Game</button>
-    <div>Game Outcome: <span id='computer-choice'></span></div>
-    <div>Wins:<span id='win-span'></span></div>
-    <div>Losses:<span id='loss-span'></span></div>
-    <div>Ties:<span id='tie-span'></span></div>
+    <div id='score'>
+        <div>Game Outcome: <span id='computer-choice'></span></div>
+        <div>Wins ......................... <span id='win-span'></span></div>
+        <div>Losses ................... <span id='loss-span'></span></div>
+        <div>Ties ........................... <span id='tie-span'></span></div>
+    </div>
 </div>
     <script src='app.js' type='module'></script>
 </body>

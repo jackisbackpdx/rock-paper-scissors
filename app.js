@@ -1,4 +1,7 @@
 import makeGuess from './rps-check.js';
+import { WON } from './rps-check.js';
+import { LOST } from './rps-check.js';
+import { TIE } from './rps-check.js';
 const button = document.getElementById('game-button');
 const computerChoiceDisplay = document.getElementById('computer-choice');
 const winSpan = document.getElementById('win-span');
@@ -22,20 +25,21 @@ const getComputerChoice = (generateRandomNumber) => {
 
 
 const updateResults = (makeGuess) => {
-    if (makeGuess === 'lost') {
+    if (makeGuess === LOST) {
         losses += 1;
-        computerChoiceDisplay.textContent = 'lost';
+        computerChoiceDisplay.textContent = LOST;
         lossSpan.textContent = losses;
-    } else if (makeGuess === 'won') {
+    } else if (makeGuess === WON) {
         wins += 1;
-        computerChoiceDisplay.textContent = 'won';
+        computerChoiceDisplay.textContent = WON;
         winSpan.textContent = wins;
-    } else if (makeGuess === 'tie') {
+    } else if (makeGuess === TIE) {
         ties += 1;
-        computerChoiceDisplay.textContent = 'tie';
+        computerChoiceDisplay.textContent = TIE;
         tieSpan.textContent = ties;
     }
 };
+
 
 button.addEventListener('click', function() {
     const selected = document.querySelector('input:checked');
