@@ -50,8 +50,9 @@ figure {
     padding: 5px;
 }
 button {
+    display: block;
     margin: 0 auto;
-    height: 50px;
+    width: 33%;
 }
 button:hover {
     background-color: red;
