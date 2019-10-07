@@ -73,9 +73,6 @@ input {
     border-radius: 5%;
     background: pink;
 }
-.radio-image {
-    
-}
 .radio-image:hover {
     cursor: pointer;
 }
